@@ -1,1 +1,45 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-accent: 'PressStart2P', monospace;
+  --font-weight-base: 400;
+  --font-weight-title: 785;
+  --page-background:
+    repeating-linear-gradient(
+      to right,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+  --container-width: clamp(343px, 90vw, 700px);
+  --header-padding: clamp(80px, 12vw, 130px);
+  --header-title-size: clamp(49px, 5vw, 65px);
+  --header-subtitle-size: clamp(14px, 2.5vw, 23px);
+  --logo-gap: 20px;
+  --card-padding: 25px;
+  --card-gap: 25px;
+  --button-like-height: 38px;
+  --button-like-padding-v: 12.5px;
+  --button-like-padding-h: 36px;
+  --button-like-line-height: 90%;
+  --button-gap: 12px;
+  --color-text: #000;
+  --color-bg-card: #fff;
+  --contour-color: #000;
+  --watermark-text-color: #000;
+  --watermark-stroke-color: #fff;
+  --animation-fill-color: #ff0000;
+}
