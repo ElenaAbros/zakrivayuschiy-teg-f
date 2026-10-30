@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-accent: 'PressStart2P', monospace;
+  --font-accent: 'PressStart2P', fantasy;
   --font-weight-base: 400;
   --font-weight-title: 785;
   --page-background:
@@ -29,13 +29,13 @@
   --header-title-size: clamp(49px, 5vw, 65px);
   --header-subtitle-size: clamp(14px, 2.5vw, 23px);
   --logo-gap: 20px;
-  --card-padding: 25px;
+  --card-padding: 23px;
   --card-gap: 25px;
   --button-like-height: 38px;
   --button-like-padding-v: 12.5px;
   --button-like-padding-h: 36px;
-  --button-like-line-height: 90%;
-  --button-gap: 12px;
+  --button-like-line-height: 0.9;
+  --button-gap: 4px;
   --color-text: #000;
   --color-bg-card: #fff;
   --contour-color: #000;

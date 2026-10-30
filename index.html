@@ -56,6 +56,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -81,7 +82,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -119,6 +120,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -144,7 +146,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -180,6 +182,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -205,7 +208,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -243,6 +246,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -268,7 +272,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -309,6 +313,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -334,7 +339,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -379,6 +384,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -404,7 +410,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -444,6 +450,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -469,7 +476,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -508,6 +515,7 @@
                   width="27"
                   height="24"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -533,7 +541,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -547,7 +555,7 @@
           onclick="window['memory-dialog'].showModal()"
           aria-controls="memory-dialog"
         >
-          <svg class="button__icon">
+          <svg class="button__icon" aria-hidden="true">
             <use href="./svg/floppy.svg#floppy-icon"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
@@ -556,14 +564,14 @@
     </main>
     <dialog class="dialog" id="memory-dialog">
       <div class="dialog__icon-column">
-        <svg class="dialog__floppy" width="39" height="39">
+        <svg class="dialog__floppy" width="39" height="39" aria-hidden="true">
           <use href="./svg/floppy.svg#floppy-icon"></use>
         </svg>
       </div>
-      <p class="dialog__text">ВСТАВЬТЕ ДИСКЕТУ, ЧТОБЫ ПРОДОЛЖИТЬ</p>
+      <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
       <form method="dialog" class="dialog__form">
         <button class="button button--ok" type="submit">
-          <span class="button__text">ОК</span>
+          <span class="button__text">ок</span>
         </button>
       </form>
     </dialog>

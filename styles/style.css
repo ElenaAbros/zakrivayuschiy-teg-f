@@ -25,7 +25,7 @@
   padding: var(--header-padding);
   background-color: #fff;
   outline: 2px solid #000;
-  width: var(--container-width);
+  inline-size: var(--container-width);
   margin: 100px auto 0;
 }
 
@@ -88,7 +88,7 @@
 .card__title-wrapper {
   width: calc(100% - 4px);
   margin-bottom: 2px;
-  background: #ffffff;
+  background: #fff;
   padding: 4px 10px;
 }
 
@@ -96,8 +96,8 @@
   font-family: var(--font-main);
   font-variation-settings: 'wght' var(--font-weight-title);
   font-size: 18px;
-  line-height: auto;
-  letter-spacing: 0%;
+  line-height: 1.2;
+  letter-spacing: 0;
   color: var(--color-text);
   margin: 0;
 }
@@ -117,6 +117,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  object-position: center;
 }
 
 .card__watermark {
@@ -125,7 +126,7 @@
   right: 25px;
   font-family: var(--font-accent);
   font-size: 14px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   color: var(--watermark-text-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
@@ -146,7 +147,7 @@
 .card__content {
   width: calc(100% - 4px);
   margin: 2px;
-  background: #ffffff;
+  background: #fff;
   padding: var(--card-padding);
   display: flex;
   flex-direction: column;
@@ -156,8 +157,8 @@
 .card__text {
   font-family: var(--font-main);
   font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0%;
+  line-height: 1.167;
+  letter-spacing: 0;
   color: var(--color-text);
   margin: 0;
 }
@@ -168,6 +169,44 @@
   gap: var(--button-gap);
   margin-top: auto;
   justify-content: flex-end;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--contour-color);
+  background: var(--color-bg-card);
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--contour-color);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button:hover::before {
+  transform: translateX(0);
 }
 
 .card__icon-button {
@@ -200,44 +239,10 @@
 
 .card__like-button {
   flex-shrink: 0;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: 130px;
   height: var(--button-like-height);
-  padding: var(--button-like-padding-v) var(--button-like-padding-h);
+  padding: var(--button-like-padding-v) 0;
   line-height: var(--button-like-line-height);
-  border: 2px solid var(--contour-color);
-  background: var(--color-bg-card);
-  cursor: pointer;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  font-family: var(--font-accent);
-  font-size: 14px;
-  letter-spacing: 0%;
-  white-space: nowrap;
-}
-
-.card__like-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--contour-color);
-}
-
-.card__like-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.card__like-button:hover::before {
-  transform: translateX(0);
 }
 
 .save-button-wrapper {
@@ -249,51 +254,16 @@
 }
 
 .button--save {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
   height: 55px;
   padding: 20px;
-  border: 2px solid var(--contour-color);
-  background: var(--color-bg-card);
-  cursor: pointer;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  font-family: var(--font-accent);
-  font-size: 14px;
   line-height: var(--button-like-line-height);
-  letter-spacing: 0%;
-  white-space: nowrap;
-}
-
-.button--save:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--contour-color);
-}
-
-.button--save::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.button--save:hover::before {
-  transform: translateX(0);
 }
 
 .button__text {
   position: relative;
   z-index: 1;
-  color: #ffffff;
+  color: #fff;
   mix-blend-mode: difference;
 }
 
@@ -302,14 +272,11 @@
   z-index: 1;
   display: inline-block;
   vertical-align: middle;
-  fill: currentColor;
+  color: #fff;
+  fill: #fff !important;
   width: 21px;
   height: 21px;
-  transition: filter 0.5s ease;
-}
-
-.button--save:hover .button__icon {
-  filter: invert(1);
+  mix-blend-mode: difference;
 }
 
 .dialog {
@@ -322,18 +289,18 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
-  gap: 10px 30px;
+  gap: 30px 30px;
   padding: 30px;
-  background: #ffffff;
-  border: 2px solid #000000;
+  background: #fff;
+  border: 2px solid #000;
   width: 353px;
-  height: 191px;
   overflow: hidden;
   align-self: center;
+  align-items: center;
 }
 
 .dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .dialog__icon-column {
@@ -347,7 +314,7 @@
 .dialog__floppy {
   width: 39px;
   height: 39px;
-  fill: #000000;
+  fill: #000;
 }
 
 .dialog__text {
@@ -355,9 +322,9 @@
   grid-row: 1;
   font-family: var(--font-accent);
   font-size: 14px;
-  line-height: 150%;
-  letter-spacing: 0%;
-  color: #000000;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #000;
   margin: 0;
   text-transform: uppercase;
   align-self: center;
@@ -371,45 +338,11 @@
 }
 
 .button--ok {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   height: 38px;
   padding: 17px 9px;
-  border: 2px solid var(--contour-color);
-  background: var(--color-bg-card);
-  cursor: pointer;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  font-family: var(--font-accent);
-  font-size: 14px;
-  line-height: 90%;
-  letter-spacing: 0%;
-  white-space: nowrap;
+  line-height: 0.9;
   width: 100%;
-}
-
-.button--ok:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--contour-color);
-}
-
-.button--ok::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.button--ok:hover::before {
-  transform: translateX(0);
+  text-transform: uppercase;
 }
 
 @media (width <= 375px) {
